@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="JoaquimPesca.MainPage"
+    BackgroundColor="#EAF2EE"
+    Title="Joaquim Pesca">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="24" Spacing="12"
+                             MaximumWidthRequest="600">
+
+            <Border BackgroundColor="#164B40"
+                    StrokeShape="RoundRectangle 20"
+                    Padding="24">
+
+                <VerticalStackLayout Spacing="6">
+                    <Label Text="JOAQUIM PESCA"
+                           TextColor="#B8D8B0"
+                           FontAttributes="Bold" />
+
+                    <Label Text="Sua próxima pescaria"
+                           FontSize="28"
+                           FontAttributes="Bold"
+                           TextColor="White" />
+
+                    <Label Text="Organize eventos e campeonatos de pesca."
+                           TextColor="White" />
+                </VerticalStackLayout>
+            </Border>
+
+            <Label Text="Nome do evento" TextColor="#164B40" />
+            <Entry Text="{Binding Nome}"
+                   Placeholder="Ex: Campeonato de pesca"
+                   BackgroundColor="White"
+                   TextColor="#164B40" />
+
+            <Label Text="Data de início" TextColor="#164B40" />
+            <DatePicker x:Name="dtInicio"
+                        Date="{Binding DataInicio}"
+                        Format="dd/MM/yyyy"
+                        TextColor="#164B40" />
+
+            <Label Text="Data de término" TextColor="#164B40" />
+            <DatePicker x:Name="dtTermino"
+                        Date="{Binding DataTermino}"
+                        Format="dd/MM/yyyy"
+                        TextColor="#164B40" />
+
+            <Label Text="Número de participantes"
+                   TextColor="#164B40" />
+            <Entry x:Name="entParticipantes"
+                   Text="{Binding Participantes}"
+                   Keyboard="Numeric"
+                   BackgroundColor="White"
+                   TextColor="#164B40" />
+
+            <Label Text="Local da pescaria"
+                   TextColor="#164B40" />
+            <Entry Text="{Binding Local}"
+                   Placeholder="Nome do pesqueiro"
+                   BackgroundColor="White"
+                   TextColor="#164B40" />
+
+            <Label Text="Custo por participante (R$)"
+                   TextColor="#164B40" />
+            <Entry x:Name="entCusto"
+                   Text="{Binding CustoParticipante}"
+                   Keyboard="Numeric"
+                   BackgroundColor="White"
+                   TextColor="#164B40" />
+
+            <Button Text="Cadastrar pescaria"
+                    Clicked="OnCadastrarClicked"
+                    BackgroundColor="#164B40"
+                    TextColor="White"
+                    CornerRadius="12"
+                    HeightRequest="52" />
+
+            <Label Text="Desenvolvido por Joaquim • 2026"
+                   HorizontalTextAlignment="Center"
+                   TextColor="#164B40"
+                   FontSize="12" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

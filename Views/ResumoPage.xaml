@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="JoaquimPesca.Views.ResumoPage"
+    BackgroundColor="#EAF2EE"
+    Title="Resumo da pescaria">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="24" Spacing="14"
+                             MaximumWidthRequest="600">
+
+            <Label Text="Pescaria cadastrada!"
+                   FontSize="28"
+                   FontAttributes="Bold"
+                   TextColor="#164B40" />
+
+            <Border BackgroundColor="White"
+                    StrokeShape="RoundRectangle 20"
+                    Padding="22">
+
+                <VerticalStackLayout Spacing="12">
+
+                    <Label Text="{Binding Nome}"
+                           FontSize="24"
+                           FontAttributes="Bold"
+                           TextColor="#164B40" />
+
+                    <Label Text="Local do evento" TextColor="#64748B" />
+                    <Label Text="{Binding Local}" TextColor="#164B40" />
+
+                    <Label Text="Período" TextColor="#64748B" />
+                    <Label Text="{Binding PeriodoTexto}" TextColor="#164B40" />
+
+                    <Label Text="Duração" TextColor="#64748B" />
+                    <Label Text="{Binding DuracaoTexto}" TextColor="#164B40" />
+
+                    <Label Text="Participantes" TextColor="#64748B" />
+                    <Label Text="{Binding Participantes}" TextColor="#164B40" />
+
+                    <Label Text="Custo individual" TextColor="#64748B" />
+                    <Label Text="{Binding CustoIndividualTexto}"
+                           TextColor="#164B40" />
+
+                </VerticalStackLayout>
+            </Border>
+
+            <Border BackgroundColor="#164B40"
+                    StrokeShape="RoundRectangle 20"
+                    Padding="24">
+
+                <VerticalStackLayout>
+                    <Label Text="CUSTO TOTAL" TextColor="White" />
+                    <Label Text="{Binding CustoTotalTexto}"
+                           FontSize="36"
+                           FontAttributes="Bold"
+                           TextColor="White" />
+                </VerticalStackLayout>
+            </Border>
+
+            <Button Text="Voltar ao cadastro"
+                    Clicked="OnVoltarClicked"
+                    BackgroundColor="#164B40"
+                    TextColor="White" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
